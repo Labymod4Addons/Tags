@@ -1,5 +1,7 @@
-package de.tags.core;
+package de.tags.core.commands;
 
+import de.tags.core.Tag;
+import de.tags.core.TagsAddon;
 import net.labymod.api.client.chat.command.Command;
 import net.labymod.api.client.chat.command.SubCommand;
 import net.labymod.api.client.component.Component;
@@ -9,7 +11,7 @@ import net.labymod.api.client.component.format.TextDecoration;
 public class TagCommand extends Command {
 
 
-  protected TagCommand() {
+  public TagCommand() {
     super("tags");
     withSubCommand(new AddCommand());
     withSubCommand(new RemoveCommand());
