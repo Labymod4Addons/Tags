@@ -1,7 +1,7 @@
 {
-  "tags": {
+  "playertags": {
     "settings": {
-      "name": "Tags",
+      "name": "Player Tags",
       "enabled": {
         "name": "Enabled"
       },
@@ -37,7 +37,7 @@
         "add": "Add a new tag",
         "name": "Username",
         "custom": {
-          "name": "Tag"
+          "name": "Player Tag"
         },
         "enabled": {
           "name": "Enabled"

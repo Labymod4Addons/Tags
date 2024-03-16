@@ -145,7 +145,7 @@ public class TagActivity extends Activity {
     this.inputWidget.addId("remove-container");
 
     ComponentWidget confirmationWidget = ComponentWidget.i18n(
-        "tags.gui.manage.remove.title");
+        "playertags.gui.manage.remove.title");
     confirmationWidget.addId("remove-confirmation");
     this.inputWidget.addContent(confirmationWidget);
 
@@ -180,7 +180,7 @@ public class TagActivity extends Activity {
     this.inputWidget = new FlexibleContentWidget();
     this.inputWidget.addId("input-list");
 
-    ComponentWidget labelName = ComponentWidget.i18n("tags.gui.manage.name");
+    ComponentWidget labelName = ComponentWidget.i18n("playertags.gui.manage.name");
     labelName.addId("label-name");
     this.inputWidget.addContent(labelName);
 
@@ -205,7 +205,7 @@ public class TagActivity extends Activity {
     this.inputWidget.addContent(nameList);
 
     ComponentWidget labelCustomName = ComponentWidget.i18n(
-        "tags.gui.manage.custom.name");
+        "playertags.gui.manage.custom.name");
     labelCustomName.addId("label-name");
     this.inputWidget.addContent(labelCustomName);
 

@@ -12,7 +12,7 @@ java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 labyMod {
     defaultPackageName = "de.tags" //change this to your main package name (used by all modules)
     addonInfo {
-        namespace = "tags"
+        namespace = "playertags"
         displayName = "Tags"
         author = "xConnorTV"
         description = "A simple tag system for LabyMod"

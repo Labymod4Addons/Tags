@@ -50,13 +50,13 @@ public class TagCommand extends Command {
 
       if(TagsAddon.INSTANCE.configuration().getTags().containsKey(username)) {
         Tag oldTag = TagsAddon.INSTANCE.configuration().getTags().get(username);
-        TagsAddon.INSTANCE.displayMessage(Component.translatable("tags.command.add.already_exists", NamedTextColor.RED).arguments(Component.text(username, NamedTextColor.GOLD), oldTag.getComponent()));
+        TagsAddon.INSTANCE.displayMessage(Component.translatable("playertags.command.add.already_exists", NamedTextColor.RED).arguments(Component.text(username, NamedTextColor.GOLD), oldTag.getComponent()));
         return true;
       }
 
       TagsAddon.INSTANCE.configuration().getTags().put(username, newTag);
 
-      TagsAddon.INSTANCE.displayMessage(Component.translatable("tags.command.add.success", NamedTextColor.GRAY).arguments(newTag.getComponent(),Component.text(username, NamedTextColor.GOLD).decorate(TextDecoration.BOLD)));
+      TagsAddon.INSTANCE.displayMessage(Component.translatable("playertags.command.add.success", NamedTextColor.GRAY).arguments(newTag.getComponent(),Component.text(username, NamedTextColor.GOLD).decorate(TextDecoration.BOLD)));
 
       return true;
     }
@@ -77,13 +77,13 @@ public class TagCommand extends Command {
       String username = strings[0];
 
       if(!TagsAddon.INSTANCE.configuration().getTags().containsKey(username)) {
-        TagsAddon.INSTANCE.displayMessage(Component.translatable("tags.command.not_found", NamedTextColor.RED).argument(Component.text(username, NamedTextColor.GOLD)));
+        TagsAddon.INSTANCE.displayMessage(Component.translatable("playertags.command.not_found", NamedTextColor.RED).argument(Component.text(username, NamedTextColor.GOLD)));
         return true;
       }
 
       Tag oldTag = TagsAddon.INSTANCE.configuration().getTags().get(username);
 
-      TagsAddon.INSTANCE.displayMessage(Component.translatable("tags.command.remove.success", NamedTextColor.GRAY).arguments(oldTag.getComponent(),Component.text(username, NamedTextColor.GOLD).decorate(TextDecoration.BOLD)));
+      TagsAddon.INSTANCE.displayMessage(Component.translatable("playertags.command.remove.success", NamedTextColor.GRAY).arguments(oldTag.getComponent(),Component.text(username, NamedTextColor.GOLD).decorate(TextDecoration.BOLD)));
       TagsAddon.INSTANCE.configuration().getTags().remove(username);
 
       return true;
@@ -106,7 +106,7 @@ public class TagCommand extends Command {
 
       if (!TagsAddon.INSTANCE.configuration().getTags().containsKey(username)) {
         TagsAddon.INSTANCE.displayMessage(
-            Component.translatable("tags.command.not_found", NamedTextColor.RED)
+            Component.translatable("playertags.command.not_found", NamedTextColor.RED)
                 .argument(Component.text(username, NamedTextColor.GOLD)));
         return true;
       }
@@ -119,7 +119,7 @@ public class TagCommand extends Command {
       Component newTagComponent = oldTag.getComponent();
 
       TagsAddon.INSTANCE.displayMessage(
-          Component.translatable("tags.command.edit.success", NamedTextColor.GRAY)
+          Component.translatable("playertags.command.edit.success", NamedTextColor.GRAY)
               .arguments(Component.text(username, NamedTextColor.GOLD).decorate(TextDecoration.BOLD), newTagComponent, oldTagComponent));
 
       return true;
