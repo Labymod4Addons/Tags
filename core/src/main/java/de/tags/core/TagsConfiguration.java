@@ -4,6 +4,7 @@ import de.tags.core.gui.activity.TagActivity;
 import net.labymod.api.addon.AddonConfig;
 import net.labymod.api.client.gui.screen.activity.Activity;
 import net.labymod.api.client.gui.screen.widget.widgets.activity.settings.ActivitySettingWidget.ActivitySetting;
+import net.labymod.api.client.gui.screen.widget.widgets.input.SliderWidget.SliderSetting;
 import net.labymod.api.client.gui.screen.widget.widgets.input.SwitchWidget.SwitchSetting;
 import net.labymod.api.configuration.loader.annotation.ConfigName;
 import net.labymod.api.configuration.loader.annotation.Exclude;
@@ -23,14 +24,21 @@ public class TagsConfiguration extends AddonConfig {
     return this.enabled;
   }
 
+  @SliderSetting(min = 0, max = 1, steps = 0.1F)
+  private final ConfigProperty<Float> tagSize = new ConfigProperty<>(0.5F);
+
+  public ConfigProperty<Float> tagSize() {
+    return this.tagSize;
+  }
+
   @Exclude
-  public final Map<String, Tag> tags = new HashMap<>();
+  private final Map<String, Tag> tags = new HashMap<>();
 
   public Map<String, Tag> getTags() {
     return tags;
   }
 
-  @MethodOrder(after = "enabled")
+  @MethodOrder(after = "tags")
   @ActivitySetting
   public Activity openNameTags() {
     return new TagActivity(false);

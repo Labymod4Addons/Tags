@@ -7,6 +7,9 @@
       },
       "openNameTags": {
         "name": "Edit Tags"
+      },
+      "tagSize": {
+        "name": "Tag Size"
       }
     },
     "command": {
