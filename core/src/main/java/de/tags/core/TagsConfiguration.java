@@ -2,10 +2,12 @@ package de.tags.core;
 
 import de.tags.core.gui.activity.TagActivity;
 import net.labymod.api.addon.AddonConfig;
+import net.labymod.api.client.entity.player.tag.PositionType;
 import net.labymod.api.client.gui.screen.activity.Activity;
 import net.labymod.api.client.gui.screen.widget.widgets.activity.settings.ActivitySettingWidget.ActivitySetting;
 import net.labymod.api.client.gui.screen.widget.widgets.input.SliderWidget.SliderSetting;
 import net.labymod.api.client.gui.screen.widget.widgets.input.SwitchWidget.SwitchSetting;
+import net.labymod.api.client.gui.screen.widget.widgets.input.dropdown.DropdownWidget.DropdownSetting;
 import net.labymod.api.configuration.loader.annotation.ConfigName;
 import net.labymod.api.configuration.loader.annotation.Exclude;
 import net.labymod.api.configuration.loader.property.ConfigProperty;
@@ -38,7 +40,14 @@ public class TagsConfiguration extends AddonConfig {
     return tags;
   }
 
-  @MethodOrder(after = "tags")
+  @DropdownSetting
+  private final ConfigProperty<TagPosition> position = new ConfigProperty<>(TagPosition.BELOW_NAME);
+
+  public ConfigProperty<TagPosition> position() {
+    return this.position;
+  }
+
+  @MethodOrder(after = "position")
   @ActivitySetting
   public Activity openNameTags() {
     return new TagActivity(false);
@@ -48,6 +57,20 @@ public class TagsConfiguration extends AddonConfig {
   public void removeInvalidNameTags() {
     this.tags.entrySet()
         .removeIf(entry -> entry.getKey().isEmpty() || entry.getValue().getText().isEmpty());
+  }
+
+  public enum TagPosition {
+    ABOVE_NAME(PositionType.ABOVE_NAME),
+    BELOW_NAME(PositionType.BELOW_NAME);
+
+    private final PositionType type;
+    TagPosition(PositionType type) {
+      this.type = type;
+    }
+
+    public PositionType type() {
+      return type;
+    }
   }
 
 }

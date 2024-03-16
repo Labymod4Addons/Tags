@@ -10,6 +10,13 @@
       },
       "tagSize": {
         "name": "Tag Size"
+      },
+      "position": {
+        "name": "Position",
+        "entries": {
+          "aboveName": "Above Name",
+          "belowName": "Below Name"
+        }
       }
     },
     "command": {

@@ -16,9 +16,15 @@ public class TagsAddon extends LabyAddon<TagsConfiguration> {
 
     this.registerCommand(new TagCommand());
 
-    labyAPI().tagRegistry().register("tags_tagrender", PositionType.BELOW_NAME, new TagRenderer());
+    labyAPI().tagRegistry().register("tags_tagrender", configuration().position().get().type(), new TagRenderer());
 
     this.logger().info("Enabled the Addon");
+
+    configuration().position().addChangeListener(tagPosition -> {
+      this.labyAPI().tagRegistry().unregister("tags_tagrender");
+      this.labyAPI().tagRegistry().register("tags_tagrender", tagPosition.type(), new TagRenderer());
+    });
+
   }
 
   public void reloadConfig() {
