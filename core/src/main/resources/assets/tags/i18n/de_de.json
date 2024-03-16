@@ -1,0 +1,51 @@
+{
+  "tags":{
+    "settings":{
+      "name":"Tags",
+      "enabled":{
+        "name":"Aktiviert"
+      },
+      "openNameTags":{
+        "name":"Tags bearbeiten"
+      },
+      "tagSize":{
+        "name":"Tag-Größe"
+      },
+      "position":{
+        "name":"Position",
+        "entries":{
+          "aboveName":"Über dem Namen",
+          "belowName":"Unter dem Namen"
+        }
+      }
+    },
+    "command":{
+      "not_found":"Der Spieler %s hat kein Tag.",
+      "remove":{
+        "success":"Der Tag %s wurde vom Spieler %s entfernt."
+      },
+      "add":{
+        "success":"Tag %s wurde dem Spieler %s hinzugefügt.",
+        "already_exists":"Der Spieler %s hat bereits einen Tag. (%s)"
+      },
+      "edit":{
+        "success":"Der Tag von %s wurde zu %s geändert. (%s)"
+      }
+    },
+    "gui":{
+      "manage":{
+        "add":"Neuen Tag hinzufügen",
+        "name":"Benutzername",
+        "custom":{
+          "name":"Tag"
+        },
+        "enabled":{
+          "name":"Aktiviert"
+        },
+        "remove":{
+          "title":"Möchten Sie diesen Eintrag wirklich löschen?"
+        }
+      }
+    }
+  }
+}
