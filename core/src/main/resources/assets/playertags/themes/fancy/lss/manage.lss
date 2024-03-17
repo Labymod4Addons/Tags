@@ -23,10 +23,9 @@ TextField {
   height: 100%;
 
 	.input-container {
+	  z-index: 1;
     width: 100%;
     height: 100;
-    left: 50%;
-    top: 47%;
     alignment-x: center;
     alignment-y: center;
 
@@ -50,6 +49,7 @@ TextField {
 Tag {
   background-color: rgba(17,17,17,0.55);
   border-radius: 5;
+  border: 1 rgba(17,17,17,0);
 }
 
 Tag:active {
@@ -61,8 +61,6 @@ Tag:selected {
   border-radius: 5;
   background-color:rgba(20,20,20,0.50);
 }
-
-
 .input-name-list {
   margin-left: 5;
   height: 25;
