@@ -7,6 +7,7 @@ import net.labymod.api.client.chat.command.SubCommand;
 import net.labymod.api.client.component.Component;
 import net.labymod.api.client.component.format.NamedTextColor;
 import net.labymod.api.client.component.format.TextDecoration;
+import java.util.Arrays;
 
 public class TagCommand extends Command {
 
@@ -45,7 +46,7 @@ public class TagCommand extends Command {
       }
 
       String username = strings[0];
-      String text = strings[1];
+      String text = String.join(" ", Arrays.copyOfRange(strings, 1, strings.length));
       Tag newTag = Tag.create(text);
 
       if(TagsAddon.INSTANCE.configuration().getTags().containsKey(username)) {
