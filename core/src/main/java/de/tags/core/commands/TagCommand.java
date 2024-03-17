@@ -112,7 +112,7 @@ public class TagCommand extends Command {
         return true;
       }
 
-      String text = strings[1];
+      String text = String.join(" ", Arrays.copyOfRange(strings, 1, strings.length));
       Tag oldTag = TagsAddon.INSTANCE.configuration().getTags().get(username);
 
       Component oldTagComponent = oldTag.getComponent();
